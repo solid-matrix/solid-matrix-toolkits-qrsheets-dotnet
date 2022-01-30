@@ -1,8 +1,8 @@
 ﻿using SolidMatrix.Toolkits.QrSheets;
 using System.Diagnostics;
 
-var qrSheets = new QrSheets();
-Stopwatch sw = new Stopwatch();
+QrSheets qrSheets = new();
+Stopwatch sw = new();
 
 Console.WriteLine($"生成二维码-开始");
 sw.Start();

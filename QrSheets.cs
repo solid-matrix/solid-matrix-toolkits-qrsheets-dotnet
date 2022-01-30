@@ -8,8 +8,8 @@ namespace SolidMatrix.Toolkits.QrSheets;
 
 public class QrSheets
 {
-    private string _name;
-    private ConcurrentDictionary<string, Stream> _codeDict = new();
+    private readonly string _name;
+    private readonly ConcurrentDictionary<string, Stream> _codeDict = new();
 
     private readonly int PageNumber = 100;
     private readonly int CodePerPage = 10;
@@ -26,7 +26,7 @@ public class QrSheets
             {
                 for (int i = 0; i < 100; i++)
                 {
-                    var name = $"001-{i:00}-{DateTime.Now.ToString("yyMMdd")}";
+                    var name = $"001-{i:00}-{DateTime.Now:yyMMdd}";
                     if (checker(name)) return name;
                 }
                 return null;
